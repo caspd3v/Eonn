@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover minimal-ui standalone">
+    <title>Eonn - Crypto & Mods</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #f2f2f2;
+            font-family: 'Helvetica', Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .content-card {
+            width: 85%;
+            max-width: 400px;
+            margin: 20px;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background: rgba(0, 0, 71, 0.2);
+            border-radius: 20px;
+            text-align: center;
+            color: #e6e6e6;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .description-card {
+            animation: fadeIn 1s ease-in;
+        }
+
+        .crypto-card {
+            animation: fadeIn 1s ease-in 0.3s;
+        }
+
+        .action-button {
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .action-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 15px;
+            }
+
+            .action-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        .title {
+            font-size: 30px;
+            margin: 70px 0 0 17px;
+            display: inline-block;
+        }
+
+        .sub {
+            font-size: 20px;
+            margin-top: 78px;
+            position: absolute;
+            opacity: 0.7;
+            display:inline-block;
+        }
+
+</style>
+</head>
+<body>
+   
+    <nav class="navbar">
+        <div class="logo">
+            <h1 class="title">Eonn</h1>
+            <h3 class="sub">Beta</h3>
+        </div>
+    </nav>
+<div style="margin-top:120px;"></div>
+
+<div class="content-card description-card">
+        <div class="description">
+            <h1><span class="typed-text"></span></h1>
+            <p>Discover apps that fit your needs, from mod stores to real-time crypto tracking.</p>
+        </div>
+        <div class="button-container">
+            <button onclick="location='app.php'" class="action-button" id="ios-mod-store">iOS Mod Store</button>
+            <button onclick="location='eon.html'" class="action-button" id="crypto-tracker">Crypto Tracker</button>
+        </div>
+    </div>
+
+    <div class="content-card description-card">
+        <p>Welcome to Eonn, where we bring you enhanced apps and crypto tools.</p>
+    </div>
+
+    <div class="content-card crypto-card">
+        <h2>Our Coin</h2>
+        <p>Our mission is to create a crypto coin that will last for Eons, enjoy our app and invest!</p>
+        <button onclick="alert('Soon…');" class="action-button" id="view-more-crypto">Copy Ca</button>
+    </div>
+
+    <script>
+     $(document).ready(function () {
+   
+    new Typed('.typed-text', {
+        strings: ["Welcome to Eonn!", "Enhanced apps and crypto tracking await!", "Explore our features today!"],
+        typeSpeed: 60,
+        backSpeed: 40,
+        loop: true
+    });
+
+    $('.action-button').on('click', function () {
+        anime({
+            targets: this,
+            scale: [1, 1.2, 1],
+            duration: 500,
+            easing: 'easeInOutQuad'
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
